@@ -25,7 +25,7 @@ class updatePostRequest extends FormRequest
     {
         return [
             'title' => 'nullable|max:255|string',
-            'description' => 'required|string'
+            'description' => 'nullable|string'
         ];
     }
 }

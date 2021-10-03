@@ -38,8 +38,8 @@ class PostController extends Controller
         }
         $post->update([
             'title' => $request->title ?? $post->title,
-            'description'  => $request->description,
-            'user_id' => $request->user_id
+            'description'  => $request->description ?? $post->description,
+            'user_id' => $request->user_id ?? $post->user()->id
         ]);
         session()->flash('update_post');
         return redirect('/');
