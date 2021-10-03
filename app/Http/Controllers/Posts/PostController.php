@@ -37,7 +37,7 @@ class PostController extends Controller
             session()->flash('fail');
         }
         $post->update([
-            'title' => $request->title,
+            'title' => $request->title ?? $post->title,
             'description'  => $request->description,
             'user_id' => $request->user_id
         ]);
